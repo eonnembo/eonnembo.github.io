@@ -9,6 +9,7 @@
     <nav class="menu" aria-label="Secciones">
       <a href="#experiencia">Experiencia</a>
       <a href="#proyectos">Proyectos</a>
+      <a href="#ia">IA</a>
       <a href="#stack">Stack</a>
       <a href="#como-trabajo">Cómo trabajo</a>
       <a href="#contacto">Contacto</a>
@@ -62,6 +63,7 @@
   front: [<span class="s">'Angular'</span>, <span class="s">'TypeScript'</span>, <span class="s">'Signals'</span>],
   back: [<span class="s">'Spring Boot'</span>, <span class="s">'NestJS'</span>, <span class="s">'FastAPI'</span>],
   mobile: [<span class="s">'Kotlin Multiplatform'</span>],
+  ia: [<span class="s">'Claude Code'</span>, <span class="s">'MCP'</span>, <span class="s">'agentes'</span>],
   datos: [<span class="s">'PostgreSQL'</span>, <span class="s">'MySQL'</span>],
   nube: [<span class="s">'GCP'</span>, <span class="s">'Kubernetes'</span>],
   disponible: <span class="k">true</span>,
@@ -136,9 +138,26 @@
     </div>
   </section>
 
+  <!-- IA -->
+  <section class="ia" id="ia" aria-labelledby="t-ia">
+    <div class="ia__cabecera">
+      <h2 class="seccion__titulo" id="t-ia"><span class="seccion__marca">04</span>Desarrollo con IA</h2>
+      <p class="ia__bajada">{{ ia.bajada }}</p>
+    </div>
+    <div class="ia__usos">
+      @for (u of ia.usos; track u.titulo) {
+        <div class="ia__uso">
+          <h3 class="ia__titulo">{{ u.titulo }}</h3>
+          <p>{{ u.texto }}</p>
+        </div>
+      }
+    </div>
+    <p class="ia__nota">{{ ia.nota }}</p>
+  </section>
+
   <!-- Stack -->
   <section class="seccion" id="stack" aria-labelledby="t-stack">
-    <h2 class="seccion__titulo" id="t-stack"><span class="seccion__marca">04</span>Stack</h2>
+    <h2 class="seccion__titulo" id="t-stack"><span class="seccion__marca">05</span>Stack</h2>
     <dl class="stack">
       @for (g of stack; track g.capa) {
         <div class="stack__grupo">
@@ -157,7 +176,7 @@
 
   <!-- Cómo trabajo -->
   <section class="seccion" id="como-trabajo" aria-labelledby="t-como">
-    <h2 class="seccion__titulo" id="t-como"><span class="seccion__marca">05</span>Cómo trabajo</h2>
+    <h2 class="seccion__titulo" id="t-como"><span class="seccion__marca">06</span>Cómo trabajo</h2>
     <div class="practicas">
       @for (p of practicas; track p.titulo) {
         <div class="practica">
@@ -170,7 +189,7 @@
 
   <!-- Formación -->
   <section class="seccion" aria-labelledby="t-form">
-    <h2 class="seccion__titulo" id="t-form"><span class="seccion__marca">06</span>Formación</h2>
+    <h2 class="seccion__titulo" id="t-form"><span class="seccion__marca">07</span>Formación</h2>
     <div class="formacion">
       <div>
         <h3 class="puesto__rol">{{ formacion.titulo }}</h3>

@@ -1,6 +1,6 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { ChangeDetectionStrategy, Component, PLATFORM_ID, afterNextRender, inject, signal } from '@angular/core';
-import { EXPERIENCIA, FORMACION, PERFIL, PRACTICAS, PROYECTOS, STACK } from './perfil';
+import { EXPERIENCIA, FORMACION, IA, PERFIL, PRACTICAS, PROYECTOS, STACK } from './perfil';
 
 type Tema = 'claro' | 'oscuro';
 const CLAVE_TEMA = 'eo-tema';
@@ -18,6 +18,7 @@ export class App {
   protected readonly experiencia = EXPERIENCIA;
   protected readonly proyectos = PROYECTOS;
   protected readonly stack = STACK;
+  protected readonly ia = IA;
   protected readonly practicas = PRACTICAS;
   protected readonly formacion = FORMACION;
   protected readonly anios = new Date().getFullYear() - PERFIL.desde;

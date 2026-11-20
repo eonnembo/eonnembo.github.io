@@ -35,12 +35,13 @@ export const PERFIL = {
   nombre: 'Elías Onnembo',
   nombreCompleto: 'Elías Rodrigo Onnembo',
   rol: 'Desarrollador Full Stack',
-  especialidad: 'Angular · Spring Boot · Node.js',
+  especialidad: 'Angular · Spring Boot · Node.js · IA con Claude',
   ubicacion: 'Argentina',
   desde: 2017,
   bajada:
     'Construyo productos web de punta a punta: microfrontends en Angular, APIs en Spring Boot y NestJS, ' +
-    'y la base de datos y la nube que los sostienen. Desde 2017 hago software que usan negocios reales todos los días.',
+    'y la base de datos y la nube que los sostienen. Trabajo con IA todos los días: Claude Code es parte central de cómo ' +
+    'diseño, programo, reviso y verifico cada entrega.',
   sobreMi: [
     'Soy Técnico Superior en Programación y llevo más de nueve años desarrollando software de gestión. ' +
       'Empecé en el back-end de un ERP y hoy trabajo en todas las capas de una plataforma SaaS para gastronomía ' +
@@ -72,8 +73,9 @@ export const EXPERIENCIA: Puesto[] = [
       'Participé en la migración de la base de datos de MySQL a AlloyDB (PostgreSQL) con Row-Level Security para aislar a cada cliente.',
       'Trabajo con el punto de venta Android (Kotlin Multiplatform y Compose Multiplatform) en la integración con la plataforma web.',
       'Despliego en Google Cloud (GKE / Kubernetes) con pipelines de GitHub Actions, análisis de seguridad con Snyk y un flujo de entregas con staging y QA.',
+      'Desarrollo con Claude Code y agentes especializados todos los días, dentro de un flujo donde cada entrega pasa por una revisión de código con IA antes de llegar a QA.',
     ],
-    stack: ['Angular', 'TypeScript', 'Spring Boot', 'Java', 'Kotlin', 'PostgreSQL', 'MySQL', 'GCP', 'Kubernetes'],
+    stack: ['Angular', 'TypeScript', 'Spring Boot', 'Java', 'Kotlin', 'PostgreSQL', 'MySQL', 'GCP', 'Kubernetes', 'Claude Code'],
   },
   {
     empresa: 'ITRIS Software',
@@ -142,7 +144,8 @@ export const STACK: GrupoStack[] = [
   { capa: 'Mobile', items: ['Kotlin Multiplatform', 'Compose Multiplatform', 'Android', 'Ktor', 'Koin'] },
   { capa: 'Datos', items: ['PostgreSQL', 'AlloyDB', 'MySQL', 'SQL Server', 'Prisma', 'JPA / Hibernate', 'Redis', 'Row-Level Security'] },
   { capa: 'Cloud y DevOps', items: ['Google Cloud', 'Kubernetes (GKE)', 'Docker', 'GitHub Actions', 'Snyk', 'Coolify'] },
-  { capa: 'Herramientas', items: ['Git', 'Jira', 'Claude Code', 'Jasmine / Karma', 'JUnit', 'Postman'] },
+  { capa: 'IA', items: ['Claude Code', 'Claude (Anthropic)', 'Agentes y subagentes', 'MCP', 'Revisión de código con IA', 'CLAUDE.md / skills'] },
+  { capa: 'Herramientas', items: ['Git', 'Jira', 'Jasmine / Karma', 'JUnit', 'Postman'] },
 ];
 
 export const PRACTICAS: Practica[] = [
@@ -163,14 +166,52 @@ export const PRACTICAS: Practica[] = [
     texto: 'Los scripts sobre bases productivas corren primero en simulación, muestran qué van a tocar y piden confirmación explícita antes de escribir.',
   },
   {
-    titulo: 'IA como herramienta de trabajo',
-    texto: 'Uso agentes de IA (Claude Code) para desarrollar, revisar código y verificar entregas, con criterio propio sobre cada cambio.',
+    titulo: 'Seguridad desde el modelo',
+    texto: 'Pienso los permisos y el aislamiento de los datos de cada cliente desde el diseño, no como un parche al final.',
   },
   {
     titulo: 'Documentar lo que se decide',
     texto: 'Dejo escrito el porqué de cada decisión en el ticket y en el código, para que el próximo que llegue no tenga que adivinarlo.',
   },
 ];
+
+export interface UsoIa {
+  titulo: string;
+  texto: string;
+}
+
+export const IA = {
+  bajada:
+    'La IA no reemplaza el criterio: lo multiplica. Uso Claude Code como compañero de trabajo en todo el ciclo, ' +
+    'desde entender un ticket hasta verificar que el cambio funciona en el ambiente real.',
+  usos: [
+    {
+      titulo: 'Desarrollo con agentes',
+      texto:
+        'Trabajo a diario con Claude Code y agentes especializados por rol —frontend Angular, backend Spring Boot, testing, ' +
+        'seguridad, QA— para implementar, refactorizar y escribir tests sobre repositorios grandes.',
+    },
+    {
+      titulo: 'Revisión de código con IA',
+      texto:
+        'En mi equipo, cada entrega pasa por una revisión automática con IA antes de llegar a staging y a QA. ' +
+        'Si la revisión no aprueba el último commit, el cambio no avanza.',
+    },
+    {
+      titulo: 'Integrado a las herramientas',
+      texto:
+        'Conecto Claude con Jira, GitHub y el navegador a través de MCP: lee el ticket, abre el PR, prueba la pantalla y deja ' +
+        'documentado lo que hizo, sin copiar y pegar entre herramientas.',
+    },
+    {
+      titulo: 'Contexto y criterio',
+      texto:
+        'Mantengo el contexto del proyecto en archivos CLAUDE.md, skills y memoria, y verifico cada cambio contra datos reales: ' +
+        'la IA acelera, pero lo que se entrega lo entiendo y lo firmo yo.',
+    },
+  ] as UsoIa[],
+  nota: 'Mis proyectos propios, Clubex y PlayVolt, están desarrollados con Claude Code como par de programación.',
+};
 
 export const FORMACION = {
   titulo: 'Técnico Superior en Programación',
