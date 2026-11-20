@@ -1,0 +1,194 @@
+<a class="saltar" href="#contenido">Ir al contenido</a>
+
+<header class="barra">
+  <div class="barra__interior">
+    <a class="marca" href="#inicio" aria-label="Inicio">
+      <span class="marca__monograma" aria-hidden="true">EO</span>
+      <span class="marca__nombre">{{ perfil.nombre }}</span>
+    </a>
+    <nav class="menu" aria-label="Secciones">
+      <a href="#experiencia">Experiencia</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#stack">Stack</a>
+      <a href="#como-trabajo">Cómo trabajo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="barra__acciones">
+      <button type="button" class="icono-btn" (click)="alternarTema()" aria-label="Cambiar entre tema claro y oscuro" title="Tema claro / oscuro">
+        <svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" /><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6" /></svg>
+        <svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 14.6A8.4 8.4 0 0 1 9.4 3.8a8.4 8.4 0 1 0 10.8 10.8Z" /></svg>
+      </button>
+      <button type="button" class="btn btn--chico" (click)="imprimir()">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.2M7.4 10.3 12 14.8l4.6-4.5M4.5 19.5h15" /></svg>
+        CV en PDF
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+  <!-- Portada -->
+  <section class="portada" id="inicio">
+    <div class="portada__texto">
+      <p class="disponible"><span class="disponible__punto" aria-hidden="true"></span>Abierto a nuevas oportunidades</p>
+      <h1 class="portada__nombre">{{ perfil.nombre }}</h1>
+      <p class="portada__rol">{{ perfil.rol }} <span class="portada__especialidad">{{ perfil.especialidad }}</span></p>
+      <p class="portada__bajada">{{ perfil.bajada }}</p>
+      <ul class="datos" aria-label="Datos">
+        <li>{{ perfil.ubicacion }}</li>
+        <li>{{ anios }} años de experiencia</li>
+        <li>Técnico en Programación · UTN</li>
+      </ul>
+      <div class="portada__acciones">
+        <a class="btn" [href]="perfil.enlaces.linkedin" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="relleno" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4v-11Z" /></svg>
+          LinkedIn
+        </a>
+        <a class="btn btn--secundario" [href]="perfil.enlaces.github" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="relleno" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" /></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <figure class="codigo" aria-label="Resumen del perfil en formato de código">
+      <figcaption class="codigo__pestana"><span class="codigo__puntos" aria-hidden="true"><i></i><i></i><i></i></span>perfil.ts</figcaption>
+      <pre><code><span class="k">export const</span> <span class="v">elias</span> = &#123;
+  rol: <span class="s">'Full Stack'</span>,
+  desde: <span class="n">{{ perfil.desde }}</span>,
+  front: [<span class="s">'Angular'</span>, <span class="s">'TypeScript'</span>, <span class="s">'Signals'</span>],
+  back: [<span class="s">'Spring Boot'</span>, <span class="s">'NestJS'</span>, <span class="s">'FastAPI'</span>],
+  mobile: [<span class="s">'Kotlin Multiplatform'</span>],
+  datos: [<span class="s">'PostgreSQL'</span>, <span class="s">'MySQL'</span>],
+  nube: [<span class="s">'GCP'</span>, <span class="s">'Kubernetes'</span>],
+  disponible: <span class="k">true</span>,
+&#125;;</code></pre>
+    </figure>
+  </section>
+
+  <!-- Sobre mí -->
+  <section class="seccion seccion--angosta" aria-labelledby="t-sobre">
+    <h2 class="seccion__titulo" id="t-sobre"><span class="seccion__marca">01</span>Sobre mí</h2>
+    @for (p of perfil.sobreMi; track $index) {
+      <p class="parrafo">{{ p }}</p>
+    }
+  </section>
+
+  <!-- Experiencia -->
+  <section class="seccion" id="experiencia" aria-labelledby="t-exp">
+    <h2 class="seccion__titulo" id="t-exp"><span class="seccion__marca">02</span>Experiencia</h2>
+    <ol class="linea">
+      @for (e of experiencia; track e.empresa) {
+        <li class="puesto">
+          <div class="puesto__fechas">
+            <span>{{ e.desde }}</span>
+            <span class="puesto__guion" aria-hidden="true">→</span>
+            <span [class.actual]="e.hasta === 'actualidad'">{{ e.hasta }}</span>
+          </div>
+          <div class="puesto__cuerpo">
+            <h3 class="puesto__rol">{{ e.rol }} <span class="puesto__empresa">· {{ e.empresa }}</span></h3>
+            <p class="puesto__lugar">{{ e.lugar }}</p>
+            <p class="puesto__resumen">{{ e.resumen }}</p>
+            <ul class="logros">
+              @for (l of e.logros; track $index) {
+                <li>{{ l }}</li>
+              }
+            </ul>
+            <ul class="chips" aria-label="Tecnologías">
+              @for (t of e.stack; track t) {
+                <li>{{ t }}</li>
+              }
+            </ul>
+          </div>
+        </li>
+      }
+    </ol>
+  </section>
+
+  <!-- Proyectos -->
+  <section class="seccion" id="proyectos" aria-labelledby="t-proy">
+    <h2 class="seccion__titulo" id="t-proy"><span class="seccion__marca">03</span>Proyectos propios</h2>
+    <p class="seccion__bajada">Productos que diseñé y desarrollé por mi cuenta, de la base de datos al deploy. Los repositorios son privados: con gusto los muestro en una entrevista.</p>
+    <div class="proyectos">
+      @for (p of proyectos; track p.nombre; let primero = $first) {
+        <article class="proyecto" [class.proyecto--destacado]="primero">
+          <header class="proyecto__cabecera">
+            <h3 class="proyecto__nombre">{{ p.nombre }}</h3>
+            <span class="estado" [class.estado--vivo]="p.estado !== 'Desarrollo'">{{ p.estado }}</span>
+          </header>
+          <p class="proyecto__tipo">{{ p.tipo }}</p>
+          <p class="proyecto__resumen">{{ p.resumen }}</p>
+          <ul class="logros logros--compactos">
+            @for (x of p.puntos; track $index) {
+              <li>{{ x }}</li>
+            }
+          </ul>
+          <ul class="chips" aria-label="Tecnologías">
+            @for (t of p.stack; track t) {
+              <li>{{ t }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- Stack -->
+  <section class="seccion" id="stack" aria-labelledby="t-stack">
+    <h2 class="seccion__titulo" id="t-stack"><span class="seccion__marca">04</span>Stack</h2>
+    <dl class="stack">
+      @for (g of stack; track g.capa) {
+        <div class="stack__grupo">
+          <dt>{{ g.capa }}</dt>
+          <dd>
+            <ul class="chips chips--sueltos">
+              @for (t of g.items; track t) {
+                <li>{{ t }}</li>
+              }
+            </ul>
+          </dd>
+        </div>
+      }
+    </dl>
+  </section>
+
+  <!-- Cómo trabajo -->
+  <section class="seccion" id="como-trabajo" aria-labelledby="t-como">
+    <h2 class="seccion__titulo" id="t-como"><span class="seccion__marca">05</span>Cómo trabajo</h2>
+    <div class="practicas">
+      @for (p of practicas; track p.titulo) {
+        <div class="practica">
+          <h3 class="practica__titulo">{{ p.titulo }}</h3>
+          <p>{{ p.texto }}</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Formación -->
+  <section class="seccion" aria-labelledby="t-form">
+    <h2 class="seccion__titulo" id="t-form"><span class="seccion__marca">06</span>Formación</h2>
+    <div class="formacion">
+      <div>
+        <h3 class="puesto__rol">{{ formacion.titulo }}</h3>
+        <p class="puesto__lugar">{{ formacion.institucion }}</p>
+      </div>
+      <span class="formacion__periodo">{{ formacion.periodo }}</span>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="contacto" id="contacto" aria-labelledby="t-contacto">
+    <h2 class="contacto__titulo" id="t-contacto">¿Hablamos?</h2>
+    <p class="contacto__texto">Estoy buscando mi próximo desafío como desarrollador Full Stack. Escribime por LinkedIn y coordinamos una charla.</p>
+    <div class="portada__acciones">
+      <a class="btn" [href]="perfil.enlaces.linkedin" target="_blank" rel="noopener">Escribime por LinkedIn</a>
+      <a class="btn btn--secundario" [href]="perfil.enlaces.github" target="_blank" rel="noopener">Ver GitHub</a>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <p>© {{ anioActual }} {{ perfil.nombreCompleto }}</p>
+  <p class="pie__tecnico">Hecho con Angular 21 · signals · prerenderizado estático · GitHub Pages</p>
+</footer>
