@@ -210,7 +210,6 @@ export const IA = {
         'la IA acelera, pero lo que se entrega lo entiendo y lo firmo yo.',
     },
   ] as UsoIa[],
-  nota: 'Mis proyectos propios, Clubex y PlayVolt, están desarrollados con Claude Code como par de programación.',
 };
 
 export const FORMACION = {
