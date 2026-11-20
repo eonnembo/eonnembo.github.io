@@ -98,7 +98,7 @@ export const PROYECTOS: Proyecto[] = [
     resumen:
       'Gestión integral para clubes deportivos de cualquier disciplina: sedes, actividades, planes, socios, cuotas, ventas, gastos y control de accesos.',
     puntos: [
-      'En producción desde agosto de 2026 con un club real y sus socios; reemplazó al sistema anterior.',
+      'En producción con clubes reales y sus socios.',
       'Dos negocios en un producto: la plataforma (suscripciones, cobros, alta de clubes) y la operación de cada club.',
       'Aislamiento entre clubes con Row-Level Security en PostgreSQL.',
       'Panel de gestión en Angular con signals, portal del socio como PWA mobile-first y landing propia.',
