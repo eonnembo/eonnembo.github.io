@@ -108,10 +108,11 @@ export const PROYECTOS: Proyecto[] = [
   },
   {
     nombre: 'PlayVolt',
-    tipo: 'Juegos interactivos para transmisiones en vivo',
+    tipo: 'Sistema de juegos en vivo para streamers',
     estado: 'En uso',
     resumen:
-      'Nueve juegos que reaccionan en tiempo real a los regalos, comentarios y likes del público en TikTok LIVE, Twitch y Kick.',
+      'Sistema para que un streamer transmita juegos en su vivo de TikTok, Twitch o Kick en los que el público participa ' +
+      'con sus regalos, comentarios y likes. Se usa para que la audiencia interactúe más y para aumentar las donaciones del vivo.',
     puntos: [
       'Eventos en tiempo real con WebSockets: cada interacción del vivo se convierte en una acción del juego.',
       'Motores de física 2D (Matter.js) y escenas 3D (Three.js) renderizadas como overlay de la transmisión.',
