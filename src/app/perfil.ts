@@ -42,7 +42,7 @@ export const PERFIL = {
     'Construyo productos web de punta a punta: microfrontends en Angular, APIs en Spring Boot y NestJS, ' +
     'y la base de datos y la nube que los sostienen. Desde 2017 hago software que usan negocios reales todos los días.',
   sobreMi: [
-    'Soy técnico superior en programación (UTN) y llevo más de nueve años desarrollando software de gestión. ' +
+    'Soy Técnico Superior en Programación y llevo más de nueve años desarrollando software de gestión. ' +
       'Empecé en el back-end de un ERP y hoy trabajo en todas las capas de una plataforma SaaS para gastronomía ' +
       'que restaurantes y comercios usan todos los días.',
     'Me gusta llevar una funcionalidad completa: entender el problema con producto, diseñar el modelo de datos, ' +
@@ -173,6 +173,6 @@ export const PRACTICAS: Practica[] = [
 
 export const FORMACION = {
   titulo: 'Técnico Superior en Programación',
-  institucion: 'Universidad Tecnológica Nacional (UTN)',
+  institucion: 'Universidad Tecnológica Nacional',
   periodo: '2016 – 2018',
 };
