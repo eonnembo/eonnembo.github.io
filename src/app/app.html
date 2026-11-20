@@ -30,7 +30,10 @@
   <!-- Portada -->
   <section class="portada" id="inicio">
     <div class="portada__texto">
-      <p class="disponible"><span class="disponible__punto" aria-hidden="true"></span>Abierto a nuevas oportunidades</p>
+      <div class="presentacion">
+        <img class="foto" src="foto.webp" width="440" height="440" alt="Foto de {{ perfil.nombre }}" fetchpriority="high" />
+        <p class="disponible"><span class="disponible__punto" aria-hidden="true"></span>Abierto a nuevas oportunidades</p>
+      </div>
       <h1 class="portada__nombre">{{ perfil.nombre }}</h1>
       <p class="portada__rol">{{ perfil.rol }} <span class="portada__especialidad">{{ perfil.especialidad }}</span></p>
       <p class="portada__bajada">{{ perfil.bajada }}</p>

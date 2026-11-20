@@ -295,12 +295,29 @@ main {
   padding-block: 72px 56px;
 }
 
+.presentacion {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.foto {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  background: var(--superficie-2);
+  box-shadow: 0 0 0 4px var(--fondo), 0 0 0 6px var(--acento);
+}
+
 .disponible {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 5px 12px;
-  margin-bottom: 22px;
   border-radius: 999px;
   background: var(--vivo-suave);
   color: var(--vivo);
@@ -868,6 +885,16 @@ main {
   .contacto,
   .disponible {
     display: none !important;
+  }
+
+  .foto {
+    width: 64pt;
+    height: 64pt;
+    box-shadow: none;
+  }
+
+  .presentacion {
+    margin-bottom: 8pt;
   }
 
   main {
